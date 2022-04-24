@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/agile-solutions-front/static/css/main.2ea72eff.css",
+    "main.js": "/agile-solutions-front/static/js/main.d4f4e06c.js",
+    "static/js/787.140e1b04.chunk.js": "/agile-solutions-front/static/js/787.140e1b04.chunk.js",
+    "index.html": "/agile-solutions-front/index.html",
+    "main.2ea72eff.css.map": "/agile-solutions-front/static/css/main.2ea72eff.css.map",
+    "main.d4f4e06c.js.map": "/agile-solutions-front/static/js/main.d4f4e06c.js.map",
+    "787.140e1b04.chunk.js.map": "/agile-solutions-front/static/js/787.140e1b04.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2ea72eff.css",
+    "static/js/main.d4f4e06c.js"
+  ]
+}
