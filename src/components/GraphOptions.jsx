@@ -1,10 +1,30 @@
 import React from "react";
-import { Container } from "reactstrap";
+import { Col, Container, Row, Stack } from "react-bootstrap";
+//import { Container } from "reactstrap";
+import Option from "./Option";
+import "./GraphOptions.css";
 
 const GraphOptions = () => {
     return (
-        <Container>
-            <h1>Holis</h1>
-        </Container>
+        <Stack direction="horizontal" className="container">
+            <Option />
+            <Option />
+            <Option />
+        </Stack>
+        // <Container className="container">
+        //     <Row className="justify-content-md-center">
+        //         <Col>
+        //             <Option />
+        //         </Col>
+        //         <Col>
+        //             <Option />
+        //         </Col>
+        //         <Col>
+        //             <Option />
+        //         </Col>
+        //     </Row>
+        // </Container>
     );
 }
+
+export default GraphOptions;
