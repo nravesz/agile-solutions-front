@@ -25,13 +25,17 @@
 // export default App;
 
 import React from "react";
+import { Container } from "react-bootstrap";
 import Header from "./components/Header";
+import Option from "./components/Option";
+import { Fragment } from "react";
 
 const App = () => {
   return (
-
+    <Fragment>
       <Header />
-
+      <Option />
+    </Fragment>
   )
 }
 
