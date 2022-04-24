@@ -2,11 +2,11 @@ import React, { Fragment } from "react";
 import { Container, Form, Stack } from "react-bootstrap";
 import "./Option.css"
 
-const Option = () => {
+const Option = ({title}) => {
     return (
         <Stack direction="horizontal" className="containter">
             <Container className="text-container">
-                Categoria:
+                {title}:
             </Container>
             <Form.Select className="form">
                 <option value="1">One</option>

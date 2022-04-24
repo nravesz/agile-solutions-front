@@ -5,28 +5,21 @@ import Option from "./Option";
 import "./GraphOptions.css";
 
 const GraphOptions = () => {
+    const categoria = ["Ropa", "Comida", "Tecnología"];
+    const ropa = ["Pantalón", "Remera", "Zapatillas"];
+    const comida = ["Cereales", "Pastas", "Frutas"];
+    const tecnología = ["Mouse", "Monitor", "Teclado"];
+
     return (
         <Stack
             direction="horizontal"
             className="graph-options-container"
         >
-            <Option />
-            <Option />
-            <Option />
+            <Option title={categoria[0]}/>
+            <Option title={categoria[1]}/>
+            <Option title={categoria[2]}/>
         </Stack>
-        // <Container className="container">
-        //     <Row className="justify-content-md-center">
-        //         <Col>
-        //             <Option />
-        //         </Col>
-        //         <Col>
-        //             <Option />
-        //         </Col>
-        //         <Col>
-        //             <Option />
-        //         </Col>
-        //     </Row>
-        // </Container>
+
     );
 }
 
