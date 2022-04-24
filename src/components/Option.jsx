@@ -2,8 +2,23 @@ import React, { useState } from "react";
 import { Container, Form, Stack } from "react-bootstrap";
 import "./Option.css"
 
-const Option = ({title}) => {
-    const [selected, setSelected] = useState(1);
+const Option = ({title, products}) => {
+    const [selected, setSelected] = useState(products[0]);
+
+    function renderOptions() {
+        const optionsToRender = [];
+        for (let i = 0; i < products.length; i++) {
+            optionsToRender.push(
+                <option
+                    key={i}
+                    value={products[i]}
+                >
+                    {products[i]}
+                </option>
+            )
+        }
+        return optionsToRender;
+    }
 
     return (
         <Stack direction="horizontal" className="containter">
@@ -14,9 +29,7 @@ const Option = ({title}) => {
                 className="form"
                 onChange={(e) => setSelected(e.target.value)}
             >
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                {renderOptions()}
             </Form.Select>
         </Stack>
     )

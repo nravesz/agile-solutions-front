@@ -17,9 +17,18 @@ const GraphOptions = () => {
             direction="horizontal"
             className="graph-options-container"
         >
-            <Option title={categoria[0]}/>
-            <Option title={categoria[1]}/>
-            <Option title={categoria[2]}/>
+            <Option 
+                title={categoria[0]}
+                products={productos[categoria[0]]}
+            />
+             <Option 
+                title={categoria[1]}
+                products={productos[categoria[1]]}
+            />
+            <Option 
+                title={categoria[2]}
+                products={productos[categoria[2]]}
+            />
         </Stack>
 
     );
