@@ -1,3 +1,6 @@
-.container {
+.graph-options-container {
+    padding-top: 1%;
     justify-content: space-between;
+    padding-left: 10%;
+    padding-right: 10%;
 }

@@ -6,7 +6,10 @@ import "./GraphOptions.css";
 
 const GraphOptions = () => {
     return (
-        <Stack direction="horizontal" className="container">
+        <Stack
+            direction="horizontal"
+            className="graph-options-container"
+        >
             <Option />
             <Option />
             <Option />
