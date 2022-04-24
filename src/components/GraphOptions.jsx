@@ -4,12 +4,6 @@ import Option from "./Option";
 import "./GraphOptions.css";
 
 const GraphOptions = ({data}) => {
-    const categoria = ["Ropa", "Comida", "Tecnología"];
-    const productos = {
-        "Ropa": ["Pantalón", "Remera", "Zapatillas"],
-        "Comida": ["Cereales", "Pastas", "Frutas"],
-        "Tecnología": ["Mouse", "Monitor", "Teclado"]
-    }
 
     let _category = Object.keys(data)[0];
     let _product = Object.keys(data[_category])[0];
@@ -19,16 +13,23 @@ const GraphOptions = ({data}) => {
     const [product, setProduct] = useState(_product);
     const [brand, setBrand] = useState(_brand);
 
-    const [productList, setProductList] = useState(Object.keys(data[category]));
-    //const [brandList, setBrandList] = useState(Object.keys(data[category][product]));
+    const [categoryList, setCategoryList] = useState(Object.keys(data));
+    const [productList, setProductList] = useState(Object.keys(data[_category]));
+    const [brandList, setBrandList] = useState(Object.keys(data[_category][_product]));
 
     useEffect(() => {
         setProduct(Object.keys(data[category])[0]);
-        //setBrand(Object.keys(data[category][product])[0]);
         setProductList(Object.keys(data[category]));
-        //setBrandList(Object.keys(data[category][product]));
-
     }, [category])
+
+    useEffect(() => {
+        setProductList(Object.keys(data[category]));
+        setBrand(Object.keys(data[category][product])[0]);
+    }, [product])
+
+    useEffect(() => {
+        setBrandList(Object.keys(data[category][product]));
+    }, [brand])
 
     return (
         <Container>
@@ -38,7 +39,7 @@ const GraphOptions = ({data}) => {
             >
                 <Option 
                     title={"Categoria"}
-                    products={Object.keys(data)}
+                    products={categoryList}
                     selected={category}
                     setSelected={setCategory}
                 />
@@ -48,15 +49,15 @@ const GraphOptions = ({data}) => {
                     selected={product}
                     setSelected={setProduct}
                 />
-                {/* <Option 
+                <Option 
                     title={"Marca"}
                     products={brandList}
                     selected={brand}
                     setSelected={setBrand}
-                /> */}
+                />
             </Stack>
             <Button
-                onClick = {() => console.log(category,product)}
+                onClick = {() => console.log(category, product, Object.keys(data[category][product]))}
             />
         </Container>
     );
