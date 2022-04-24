@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Form, Stack } from "react-bootstrap";
 import "./Option.css"
 
-const Option = ({title, products}) => {
-    const [selected, setSelected] = useState(products[0]);
+const Option = ({title, products, selected, setSelected}) => {
+    const [actual, setActual] = useState(selected);
+
+    useEffect(() => {
+        setActual(selected);
+    }, [selected])
 
     function renderOptions() {
         const optionsToRender = [];
@@ -28,6 +32,7 @@ const Option = ({title, products}) => {
             <Form.Select
                 className="form"
                 onChange={(e) => setSelected(e.target.value)}
+                value={actual}
             >
                 {renderOptions()}
             </Form.Select>

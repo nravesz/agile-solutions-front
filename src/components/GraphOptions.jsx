@@ -1,36 +1,55 @@
-import React from "react";
-import { Col, Container, Row, Stack } from "react-bootstrap";
-//import { Container } from "reactstrap";
+import React, { useEffect } from "react";
+import { Container, Stack } from "react-bootstrap";
 import Option from "./Option";
 import "./GraphOptions.css";
 
-const GraphOptions = () => {
-    const categoria = ["Ropa", "Comida", "Tecnología"];
-    const productos = {
-        "Ropa": ["Pantalón", "Remera", "Zapatillas"],
-        "Comida": ["Cereales", "Pastas", "Frutas"],
-        "Tecnología": ["Mouse", "Monitor", "Teclado"]
-    }
+const GraphOptions = ({
+    data,
+    category, setCategory, categoryList, setCategoryList,
+    product, setProduct, productList, setProductList,
+    brand,  setBrand, brandList, setBrandList
+    }) => {
+
+    useEffect(() => {
+        setProduct(Object.keys(data[category])[0]);
+        setProductList(Object.keys(data[category]));
+    }, [category])
+
+    useEffect(() => {
+        setProductList(Object.keys(data[category]));
+        setBrand(Object.keys(data[category][product])[0]);
+    }, [product])
+
+    useEffect(() => {
+        setBrandList(Object.keys(data[category][product]));
+    }, [brand])
 
     return (
-        <Stack
-            direction="horizontal"
-            className="graph-options-container"
-        >
-            <Option 
-                title={categoria[0]}
-                products={productos[categoria[0]]}
-            />
-             <Option 
-                title={categoria[1]}
-                products={productos[categoria[1]]}
-            />
-            <Option 
-                title={categoria[2]}
-                products={productos[categoria[2]]}
-            />
-        </Stack>
-
+        <Container>
+            <Stack
+                direction="horizontal"
+                className="graph-options-container"
+            >
+                <Option 
+                    title={"Category"}
+                    products={categoryList}
+                    selected={category}
+                    setSelected={setCategory}
+                />
+                <Option 
+                    title={"Product"}
+                    products={productList}
+                    selected={product}
+                    setSelected={setProduct}
+                />
+                <Option 
+                    title={"Brand"}
+                    products={brandList}
+                    selected={brand}
+                    setSelected={setBrand}
+                />
+            </Stack>
+        </Container>
     );
 }
 
