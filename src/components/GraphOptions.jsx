@@ -6,9 +6,11 @@ import "./GraphOptions.css";
 
 const GraphOptions = () => {
     const categoria = ["Ropa", "Comida", "Tecnología"];
-    const ropa = ["Pantalón", "Remera", "Zapatillas"];
-    const comida = ["Cereales", "Pastas", "Frutas"];
-    const tecnología = ["Mouse", "Monitor", "Teclado"];
+    const productos = {
+        "Ropa": ["Pantalón", "Remera", "Zapatillas"],
+        "Comida": ["Cereales", "Pastas", "Frutas"],
+        "Tecnología": ["Mouse", "Monitor", "Teclado"]
+    }
 
     return (
         <Stack
