@@ -27,10 +27,13 @@ ChartJS.register(
     },
     scales: {
       yAxes: {
-              max: 700,
-              min: 0
-        
-      }
+        max: 700,
+        min: 0,
+        title: {
+          display: true,
+          text: 'Ventas'
+        }
+      },
     }
   };
   
