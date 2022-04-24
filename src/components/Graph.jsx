@@ -24,6 +24,13 @@ ChartJS.register(
       legend: {
         position: 'bottom'
       },
+      title: {
+        display: true,
+        text: 'Sales By Month For:',
+        font: {
+          size: 20
+        }
+      },
     },
     scales: {
       yAxes: {
@@ -31,7 +38,13 @@ ChartJS.register(
         min: 0,
         title: {
           display: true,
-          text: 'Ventas'
+          text: 'Sales'
+        }
+      },
+      xAxes: {
+        title: {
+          display: true,
+          text: 'Month'
         }
       },
     }
@@ -44,8 +57,7 @@ ChartJS.register(
       labels,
       datasets: [
         {
-          label: 'Ventas',
-          // data: [10,100,50,15],
+          label: 'Sales',
           data: sales,
           backgroundColor: 'cornflowerblue',
         }

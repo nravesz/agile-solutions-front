@@ -11,7 +11,9 @@ const Header = () => {
                 <Navbar.Brand bg="light"> Menu </Navbar.Brand>
                 <Navbar.Brand bg="light"> 🔴 User name </Navbar.Brand>
             </Container>
-            <Container>
+
+
+            <Container style={{justifyContent:"right"}}>
                 <Navbar.Brand bg="light"> Sales Report </Navbar.Brand>
             </Container>
         </Navbar>

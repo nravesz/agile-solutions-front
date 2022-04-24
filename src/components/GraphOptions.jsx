@@ -31,19 +31,19 @@ const GraphOptions = ({
                 className="graph-options-container"
             >
                 <Option 
-                    title={"Categoria"}
+                    title={"Category"}
                     products={categoryList}
                     selected={category}
                     setSelected={setCategory}
                 />
                 <Option 
-                    title={"Producto"}
+                    title={"Product"}
                     products={productList}
                     selected={product}
                     setSelected={setProduct}
                 />
                 <Option 
-                    title={"Marca"}
+                    title={"Brand"}
                     products={brandList}
                     selected={brand}
                     setSelected={setBrand}
