@@ -39,19 +39,22 @@ ChartJS.register(
   
   const labels = ['January', 'February', 'March', 'April'];
   
-  export const data = {
-    labels,
-    datasets: [
-      {
-        label: 'Ventas',
-        data: [10,100,50,15],
-        backgroundColor: 'cornflowerblue',
-      }
-    ]
-  };
-  
-  export function Graph() {
-    return <Bar options={options} data={data} />;
+  const Graph = ({sales}) => {
+    const data = {
+      labels,
+      datasets: [
+        {
+          label: 'Ventas',
+          // data: [10,100,50,15],
+          data: sales,
+          backgroundColor: 'cornflowerblue',
+        }
+      ]
+    };
+
+    return(
+      <Bar options={options} data={data} />
+    );
   }
   
 export default Graph;
