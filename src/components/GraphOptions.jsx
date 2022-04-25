@@ -17,11 +17,11 @@ const GraphOptions = ({
 
     useEffect(() => {
         setProductList(Object.keys(data[category]));
-        setBrand(Object.keys(data[category][product])[0]);
+        setBrand(data[category][product][0]);
     }, [product])
 
     useEffect(() => {
-        setBrandList(Object.keys(data[category][product]));
+        setBrandList(data[category][product]);
     }, [brand])
 
     return (
